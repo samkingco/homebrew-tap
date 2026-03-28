@@ -1,8 +1,8 @@
 class Pester < Formula
   desc "Menubar notifier for Claude Code permission prompts"
   homepage "https://github.com/samkingco/pester"
-  url "https://github.com/samkingco/pester/archive/refs/tags/v1.0.0.tar.gz"
-  sha256 "82e4f1a5e2f0472a41d621cc821e5304d50d8583b02b5d7547bdc7124d24bd7c"
+  url "https://github.com/samkingco/pester/archive/refs/tags/v0.2.0.tar.gz"
+  sha256 "d4ba3a22b93202a171753e43b47e50cc71f0096e701164b789a2becd7b10d464"
   license "MIT"
 
   depends_on :macos
