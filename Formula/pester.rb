@@ -37,18 +37,16 @@ class Pester < Formula
     # Create pending directory
     mkdir_p "#{Dir.home}/.pester/pending"
 
-    # Link app to ~/Applications
+    # Copy app to ~/Applications
     app_target = Pathname.new("#{Dir.home}/Applications/Pester.app")
     app_source = prefix/"Pester.app"
-    if app_target.exist? || app_target.symlink?
-      app_target.rmtree
-    end
-    ln_s app_source, app_target
+    app_target.rmtree if app_target.exist? || app_target.symlink?
+    cp_r app_source, app_target
   end
 
   def post_uninstall
     app_target = Pathname.new("#{Dir.home}/Applications/Pester.app")
-    app_target.delete if app_target.symlink?
+    app_target.rmtree if app_target.exist?
   end
 
   def caveats
@@ -56,7 +54,7 @@ class Pester < Formula
       To set up Claude Code hooks, run:
         #{libexec}/setup-hooks.sh
 
-      Pester.app has been linked to ~/Applications.
+      Pester.app has been copied to ~/Applications.
       You may need to launch it manually the first time.
     EOS
   end
