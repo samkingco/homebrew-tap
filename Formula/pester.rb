@@ -35,18 +35,17 @@ class Pester < Formula
 
   def post_install
     # Create pending directory
-    mkdir_p "#{Dir.home}/.pester/pending"
+    system "mkdir", "-p", "#{Dir.home}/.pester/pending"
 
     # Copy app to ~/Applications
-    app_target = Pathname.new("#{Dir.home}/Applications/Pester.app")
-    app_source = prefix/"Pester.app"
-    app_target.rmtree if app_target.exist? || app_target.symlink?
-    cp_r app_source, app_target
+    app_target = "#{Dir.home}/Applications/Pester.app"
+    system "rm", "-rf", app_target
+    system "mkdir", "-p", "#{Dir.home}/Applications"
+    system "cp", "-R", "#{prefix}/Pester.app", app_target
   end
 
   def post_uninstall
-    app_target = Pathname.new("#{Dir.home}/Applications/Pester.app")
-    app_target.rmtree if app_target.exist?
+    system "rm", "-rf", "#{Dir.home}/Applications/Pester.app"
   end
 
   def caveats
