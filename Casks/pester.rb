@@ -1,6 +1,6 @@
 cask "pester" do
-  version "0.3.1"
-  sha256 "c48dcede8992f105203e5400d3bf0dfd8544d00d999a9700adeaad2183df8b30"
+  version "0.3.2"
+  sha256 "a18ff8eabb9fcb047c894f37bbff5cbc0f8f269efdc9c8ec2dbb3634ab7f258a"
 
   url "https://github.com/samkingco/pester/releases/download/v#{version}/Pester-#{version}.dmg"
   name "Pester"
