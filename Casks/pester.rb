@@ -1,10 +1,10 @@
 cask "pester" do
-  version "0.3.2"
-  sha256 "a18ff8eabb9fcb047c894f37bbff5cbc0f8f269efdc9c8ec2dbb3634ab7f258a"
+  version "0.4.0"
+  sha256 "05443979df68f189383c2a4b3e34169fd954737f66b4825119a7b46a02c87de4"
 
   url "https://github.com/samkingco/pester/releases/download/v#{version}/Pester-#{version}.dmg"
   name "Pester"
-  desc "Menubar notifier for Claude Code permission prompts"
+  desc "MacBook notch notifier for coding agents"
   homepage "https://github.com/samkingco/pester"
 
   depends_on macos: ">= :sonoma"
